@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SimaModel.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="12.1" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="SIMA_FAQ">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Precision="38" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="QUESTION" Type="nvarchar2" MaxLength="200" Nullable="false" />
+    <Property Name="CREATEDAT" Type="date" Nullable="false" />
+    <Property Name="MODIFIEDAT" Type="date" Nullable="false" />
+    <Property Name="ANSWER" Type="nclob" />
+    <Property Name="ISDELETED" Type="char" MaxLength="1" />
+    <Property Name="ISARCHIVED" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="SIMA_NEWS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Precision="38" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NEWS_TITLE" Type="nvarchar2" MaxLength="100" />
+    <Property Name="NEWS_CONTENT" Type="nclob" />
+    <Property Name="DATEPOSTED" Type="date" />
+    <Property Name="DATEMODIFIED" Type="date" />
+    <Property Name="ISDELETED" Type="char" MaxLength="1" />
+    <Property Name="ISARCHIVED" Type="char" MaxLength="1" />
+    <Property Name="IMG" Type="nvarchar2" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="SIMAAUTHORS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="number" Precision="38" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EMAIL" Type="nvarchar2" MaxLength="100" />
+    <Property Name="PASSWORD" Type="nvarchar2" MaxLength="100" />
+    <Property Name="FULLNAME" Type="nvarchar2" MaxLength="100" />
+  </EntityType>
+  <EntityContainer Name="SimaModelStoreContainer">
+    <EntitySet Name="SIMA_FAQ" EntityType="Self.SIMA_FAQ" Schema="MP" store:Type="Tables" />
+    <EntitySet Name="SIMA_NEWS" EntityType="Self.SIMA_NEWS" Schema="MP" store:Type="Tables" />
+    <EntitySet Name="SIMAAUTHORS" EntityType="Self.SIMAAUTHORS" Schema="MP" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

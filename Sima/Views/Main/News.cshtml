@@ -1,0 +1,24 @@
+﻿@model IEnumerable<SIMAAPI.Models.ViewModel.SimaModel>
+@{
+    ViewBag.Title = "News";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-12">
+            <img src=@Model.FirstOrDefault().IMG class="img_news" />
+        </div>
+        <div class="col-12">
+            <h4 class="mb-5">@Model.FirstOrDefault().NEWSTITLE </h4>
+        </div>
+        <div class="col-12">
+            <p class="mb-3">
+                @Model.FirstOrDefault().NEWSCONTENT
+            </p>
+            <p class="mb-3 text-success">
+                @Model.FirstOrDefault().DATEPOSTED.ToString("d")
+            </p>
+        </div>
+    </div>
+</div>
+

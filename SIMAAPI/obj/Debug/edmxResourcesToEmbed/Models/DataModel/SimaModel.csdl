@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SimaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="SimaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="SIMA_NEWS" EntityType="SimaModel.SIMA_NEWS" />
+    <EntitySet Name="SIMA_FAQ" EntityType="SimaModel.SIMA_FAQ" />
+    <EntitySet Name="SIMAAUTHORS" EntityType="SimaModel.SIMAAUTHOR" />
+  </EntityContainer>
+  <EntityType Name="SIMA_NEWS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NEWS_TITLE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="NEWS_CONTENT" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DATEPOSTED" Type="DateTime" />
+    <Property Name="DATEMODIFIED" Type="DateTime" />
+    <Property Name="ISDELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ISARCHIVED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="IMG" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SIMA_FAQ">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="QUESTION" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="CREATEDAT" Type="DateTime" Nullable="false" />
+    <Property Name="MODIFIEDAT" Type="DateTime" Nullable="false" />
+    <Property Name="ANSWER" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ISDELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ISARCHIVED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SIMAAUTHOR">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PASSWORD" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="FULLNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

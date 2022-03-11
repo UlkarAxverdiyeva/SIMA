@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SimaModelStoreContainer" CdmEntityContainer="SimaEntities">
+    <EntitySetMapping Name="SIMA_NEWS">
+      <EntityTypeMapping TypeName="SimaModel.SIMA_NEWS">
+        <MappingFragment StoreEntitySet="SIMA_NEWS">
+          <ScalarProperty Name="IMG" ColumnName="IMG" />
+          <ScalarProperty Name="ISARCHIVED" ColumnName="ISARCHIVED" />
+          <ScalarProperty Name="ISDELETED" ColumnName="ISDELETED" />
+          <ScalarProperty Name="DATEMODIFIED" ColumnName="DATEMODIFIED" />
+          <ScalarProperty Name="DATEPOSTED" ColumnName="DATEPOSTED" />
+          <ScalarProperty Name="NEWS_CONTENT" ColumnName="NEWS_CONTENT" />
+          <ScalarProperty Name="NEWS_TITLE" ColumnName="NEWS_TITLE" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIMA_FAQ">
+      <EntityTypeMapping TypeName="SimaModel.SIMA_FAQ">
+        <MappingFragment StoreEntitySet="SIMA_FAQ">
+          <ScalarProperty Name="ISARCHIVED" ColumnName="ISARCHIVED" />
+          <ScalarProperty Name="ISDELETED" ColumnName="ISDELETED" />
+          <ScalarProperty Name="ANSWER" ColumnName="ANSWER" />
+          <ScalarProperty Name="MODIFIEDAT" ColumnName="MODIFIEDAT" />
+          <ScalarProperty Name="CREATEDAT" ColumnName="CREATEDAT" />
+          <ScalarProperty Name="QUESTION" ColumnName="QUESTION" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SIMAAUTHORS">
+      <EntityTypeMapping TypeName="SimaModel.SIMAAUTHOR">
+        <MappingFragment StoreEntitySet="SIMAAUTHORS">
+          <ScalarProperty Name="FULLNAME" ColumnName="FULLNAME" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

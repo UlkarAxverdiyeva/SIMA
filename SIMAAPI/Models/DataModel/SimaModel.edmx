@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SimaModel.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="12.1" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="SIMA_FAQ">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Precision="38" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="QUESTION" Type="nvarchar2" MaxLength="200" Nullable="false" />
+          <Property Name="CREATEDAT" Type="date" Nullable="false" />
+          <Property Name="MODIFIEDAT" Type="date" Nullable="false" />
+          <Property Name="ANSWER" Type="nclob" />
+          <Property Name="ISDELETED" Type="char" MaxLength="1" />
+          <Property Name="ISARCHIVED" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="SIMA_NEWS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Precision="38" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NEWS_TITLE" Type="nvarchar2" MaxLength="100" />
+          <Property Name="NEWS_CONTENT" Type="nclob" />
+          <Property Name="DATEPOSTED" Type="date" />
+          <Property Name="DATEMODIFIED" Type="date" />
+          <Property Name="ISDELETED" Type="char" MaxLength="1" />
+          <Property Name="ISARCHIVED" Type="char" MaxLength="1" />
+          <Property Name="IMG" Type="nvarchar2" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="SIMAAUTHORS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Precision="38" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EMAIL" Type="nvarchar2" MaxLength="100" />
+          <Property Name="PASSWORD" Type="nvarchar2" MaxLength="100" />
+          <Property Name="FULLNAME" Type="nvarchar2" MaxLength="100" />
+        </EntityType>
+        <EntityContainer Name="SimaModelStoreContainer">
+          <EntitySet Name="SIMA_FAQ" EntityType="Self.SIMA_FAQ" Schema="MP" store:Type="Tables" />
+          <EntitySet Name="SIMA_NEWS" EntityType="Self.SIMA_NEWS" Schema="MP" store:Type="Tables" />
+          <EntitySet Name="SIMAAUTHORS" EntityType="Self.SIMAAUTHORS" Schema="MP" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SimaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="SimaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="SIMA_NEWS" EntityType="SimaModel.SIMA_NEWS" />
+          <EntitySet Name="SIMA_FAQ" EntityType="SimaModel.SIMA_FAQ" />
+          <EntitySet Name="SIMAAUTHORS" EntityType="SimaModel.SIMAAUTHOR" />
+        </EntityContainer>
+        <EntityType Name="SIMA_NEWS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NEWS_TITLE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="NEWS_CONTENT" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DATEPOSTED" Type="DateTime" />
+          <Property Name="DATEMODIFIED" Type="DateTime" />
+          <Property Name="ISDELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="ISARCHIVED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="IMG" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="SIMA_FAQ">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="QUESTION" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="CREATEDAT" Type="DateTime" Nullable="false" />
+          <Property Name="MODIFIEDAT" Type="DateTime" Nullable="false" />
+          <Property Name="ANSWER" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ISDELETED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="ISARCHIVED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="SIMAAUTHOR">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PASSWORD" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FULLNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SimaModelStoreContainer" CdmEntityContainer="SimaEntities">
+          <EntitySetMapping Name="SIMA_NEWS">
+            <EntityTypeMapping TypeName="SimaModel.SIMA_NEWS">
+              <MappingFragment StoreEntitySet="SIMA_NEWS">
+                <ScalarProperty Name="IMG" ColumnName="IMG" />
+                <ScalarProperty Name="ISARCHIVED" ColumnName="ISARCHIVED" />
+                <ScalarProperty Name="ISDELETED" ColumnName="ISDELETED" />
+                <ScalarProperty Name="DATEMODIFIED" ColumnName="DATEMODIFIED" />
+                <ScalarProperty Name="DATEPOSTED" ColumnName="DATEPOSTED" />
+                <ScalarProperty Name="NEWS_CONTENT" ColumnName="NEWS_CONTENT" />
+                <ScalarProperty Name="NEWS_TITLE" ColumnName="NEWS_TITLE" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SIMA_FAQ">
+            <EntityTypeMapping TypeName="SimaModel.SIMA_FAQ">
+              <MappingFragment StoreEntitySet="SIMA_FAQ">
+                <ScalarProperty Name="ISARCHIVED" ColumnName="ISARCHIVED" />
+                <ScalarProperty Name="ISDELETED" ColumnName="ISDELETED" />
+                <ScalarProperty Name="ANSWER" ColumnName="ANSWER" />
+                <ScalarProperty Name="MODIFIEDAT" ColumnName="MODIFIEDAT" />
+                <ScalarProperty Name="CREATEDAT" ColumnName="CREATEDAT" />
+                <ScalarProperty Name="QUESTION" ColumnName="QUESTION" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SIMAAUTHORS">
+            <EntityTypeMapping TypeName="SimaModel.SIMAAUTHOR">
+              <MappingFragment StoreEntitySet="SIMAAUTHORS">
+                <ScalarProperty Name="FULLNAME" ColumnName="FULLNAME" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

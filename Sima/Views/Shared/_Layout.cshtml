@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Sima</title>
+
+    @Styles.Render("~/Content/css/StyleSheet.css")
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body class="p-0">
+    <div class="header bg-light  ">
+        <div class="container " style="height:70px">
+            <div class="row ">
+                <div class="col-md-4 col-4">
+                    <div class="header-logo mt-3">
+                        <img src="~/img/logo.24d4a9b7.svg" alt="logo" />
+                    </div>
+                </div>
+                <div class="col-md-8 col-8  ">
+                    <div class="header-menu text-right ">
+                        <div class="header-menu d-lg-flex  " style="display:none">
+                            <ul class="d-flex">
+                                <li class="header-menu__item ">
+                                    <a href="#qr-section" class="header-menu__link text-decoration-none">Yüklə</a>
+                                </li>
+                                <li class="header-menu__item ">
+                                    <a href="#services" class="header-menu__link text-decoration-none">Xidmətlər</a>
+                                </li>
+                                <li class="header-menu__item ">
+                                    <a href="#partners" class="header-menu__link text-decoration-none ">Tərəfdaşlar</a>
+                                </li>
+                                <li class="header-menu__item ">
+                                    <a href="#news" class="header-menu__link text-decoration-none">Kampaniya və xəbərlər</a>
+                                </li>
+                                <li class="header-menu__item ">
+                                    <a href="#faq" class="header-menu__link text-decoration-none">FAQ</a>
+                                </li>
+                                <li class="text-center header-menu__item ">
+                                    <a href="#token" class="btn btn-primary header-menu__button ml-3 mt-3" target="_blank">SIMA Token</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            @RenderBody()
+        </div>
+    </div>
+
+
+    <div class="footer bg-transparent embed-responsive">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 ">
+                    <div class="header-logo mt-5 ml-2">
+                        <img src="~/img/logo.24d4a9b7.svg" alt="logo" />
+                    </div>
+                </div>
+                <div class="col-md-4 mt-5">
+                    <p class="footer-text  ml-5">
+                        <img src="~/img/call.154cc2be.svg" />
+                        157
+                    </p>
+                    <p class="footer-text  ml-5">
+                        <img src="~/img/envelope.db9db73f.svg" />
+                        info@sima.az
+                    </p>
+                </div>
+                <div class="col-md-1">
+
+                </div>
+                <div class="col-md-3 ">
+                    @Html.DropDownList("languages", new List<SelectListItem>{
+                                   new SelectListItem { Text = "AZ", Value = "1"},
+                                   new SelectListItem { Text = "EN", Value = "2" }
+                    }, "Sech", new { @class = "custom-select-form mt-5 rounded shadow p-1 ml-5" })
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="copy-footer bg-light p-3 embed-responsive">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    SİMA &copy @DateTime.Now.Year
+                </div>
+                <div class="col-md-3">
+
+                </div>
+                <div class="col-md-3 ">
+                    <p class="ml-5 text-footer">
+                        Bütün hüquqlar qorunur
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

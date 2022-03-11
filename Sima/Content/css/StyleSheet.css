@@ -1,0 +1,153 @@
+﻿.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 1px 2px rgb(0 0 0 / 14%);
+}
+
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    display: list-item;
+}
+
+a {
+    color: #245c9b
+}
+
+a:hover {
+    background-color: lightgray;
+}
+
+.header-menu__link {
+    font-size: .9375rem;
+    color: #1d204f;
+    display: inline-block;
+    padding: 1.5rem 1rem;
+    transition: all .5s ease;
+}
+
+.main-class {
+    background-color: rgb(240,240,240);
+    /*    height: 450px;
+*/ /*max-width: 100%;*/
+}
+
+div .img-main {
+    width: 400px;
+/*    height: auto;
+*/    float: right !important;
+      position:relative;
+      margin-top:100px;
+}
+
+.lead__title {
+    font-weight: 700;
+    font-size: 3.625rem;
+    color: #1d204f;
+    margin-left: 200px;
+    word-spacing: 1px;
+}
+
+span {
+    line-height: 0px;
+}
+
+.text-inner {
+    margin-left: 200px;
+}
+
+p.buttons {
+    margin-left: 200px;
+    margin-top: 30px;
+}
+
+/*.services {
+    height: 600px;
+}
+*/
+p.services_heading {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 25px;
+}
+
+.text-partner {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 35px !important;
+    line-height:25px !important;
+}
+
+.partners_more_text{
+    font-size : 30px;
+}
+
+
+.partners_title {
+    font-size: 1.125rem;
+    color: #1d204f;
+}
+
+.section-title {
+    font-size:25px;
+}
+.home-news__image img {
+    width: 100%;
+    height: 13.4375rem;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+.img_news {
+    margin-top: 80px;
+    width: 100%;
+    height: 40rem;
+    -o-object-fit: cover;
+    object-fit: cover;
+    margin-bottom:100px;
+}
+
+a:hover{
+    cursor:pointer;
+}
+/*.card{
+    margin-right:80px;
+}*/
+.text-faq {
+    color: darkslateblue;
+}
+/*flex-direction*/
+
+.home-qr {
+    position: relative;
+    background-color: #1d204f;
+    color: #fff;
+}
+
+.home-qr__title {
+    font-weight: 700;
+    font-size: 1.75rem;
+    font-family: Roboto Bold;
+    margin-bottom: 1.875rem;
+}
+.home-qr__desc {
+    font-weight: 300;
+    font-size: .9375rem;
+    line-height: 1.5rem;
+}
+
+a.btn--transparent {
+    background-color: transparent;
+    border: 1px solid white;
+    color: #fff;
+}
+a.btn--transparent:hover{
+    color:ghostwhite;
+}
+.home-qr__code {
+    text-align: right;
+}
+
